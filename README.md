@@ -2,8 +2,8 @@
 
 A record and review for my journey of leetcode week contest
 
-[X] represents there is a explain for the problem.  
-[ ] represents works need to do.
+- [x] represents there is a explain for the problem.
+- [ ] represents works need to do.
 
 ## content
 
