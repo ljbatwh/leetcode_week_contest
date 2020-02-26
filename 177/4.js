@@ -1,52 +1,7 @@
-# 1363. 三的最大倍数
-
-## 问题描述
-
-1363. Largest Multiple of Three
-
-Difficulty:Hard
-
-Given an integer array of digits, return the largest multiple of three that can be formed by concatenating some of the given digits in any order.
-
-Since the answer may not fit in an integer data type, return the answer as a string.
-
-If there is no answer return an empty string.
-
-Example 1:
-
-> Input: digits = [8,1,9]  
-> Output: "981"
-
-Example 2:
-
-> Input: digits = [8,6,7,1,0]  
-> Output: "8760"
-
-Example 3:
-
-> Input: digits = [1]  
-> Output: ""
-
-Example 4:
-
-> Input: digits = [0,0,0,0,0,0]  
-> Output: "0"
-
-Constraints:
-
-- 1 <= digits.length <= 10^4
-- 0 <= digits[i] <= 9
-- The returning answer must not contain unnecessary leading zeros.
-
-## 算法知识点
-
-1. 对于 abcde（a,b,c,d都是单独的数字） 来说，如果a+b+c+d+e可以被3整除，那么abcde就可以被3整除
-2. 因此如果a+b+c+d+e余1，那么就从a,b,c,d,e中找出余1的数字去掉一个，或者去掉余2的数字两个
-3. 如果a+b+c+d+e余2，那么就从a,b,c,d,e中找出余2的数字去掉一个，或者去掉余1的数字两个
-
-## Example
-
-~~~javascript
+/**
+ * @param {number[]} digits
+ * @return {string}
+ */
 var largestMultipleOfThree = function(digits) {
     const cnt = digits.reduce((t,i)=>{t[i]=t[i]+1;return t},new Array(10).fill(0));
     console.log(`${JSON.stringify(digits)} count ${JSON.stringify(cnt)}`);
@@ -89,4 +44,9 @@ var largestMultipleOfThree = function(digits) {
         return result;
 };
 
-~~~
+
+largestMultipleOfThree([8,1,9]);
+largestMultipleOfThree([8,6,7,1,0]);
+largestMultipleOfThree([1]);
+largestMultipleOfThree([0,0,0,0,0,0]);
+
